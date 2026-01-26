@@ -46,6 +46,7 @@ public class SituationManager : MonoBehaviour
     void SelectChoice(ChoiceData choice)
     {
         AnswerTracker.Instance.RecordChoice(choice);
+        Time.timeScale = 1;
         panel.SetActive(false);
     }
 }
