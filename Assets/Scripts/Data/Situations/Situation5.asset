@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f1ec8c5d3c9854d878b90ac0d9d8cb, type: 3}
+  m_Name: Situation5
+  m_EditorClassIdentifier: 
+  situationText: 'RESOURCE DILEMMA
+
+
+    Situation Description
+
+
+    You find a limited
+    number of energy cells.
+
+    Using them now will make the next zone easier.
+
+'
+  choices:
+  - choiceText: Use all energy immediately
+    risk: 0
+    empathy: 1
+    patience: 0
+    aggression: 0
+  - choiceText: Share them with an NPC
+    risk: 0
+    empathy: 2
+    patience: 0
+    aggression: 0
+  - choiceText: Save them for later
+    risk: 0
+    empathy: 0
+    patience: 1
+    aggression: 0

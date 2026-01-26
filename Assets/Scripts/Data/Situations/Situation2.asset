@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f1ec8c5d3c9854d878b90ac0d9d8cb, type: 3}
+  m_Name: Situation2
+  m_EditorClassIdentifier: 
+  situationText: "THE STRANGER\n\nSituation Description\n\nA wounded stranger blocks
+    your path.\nHe whispers, \u201CI know a way out, but I can\u2019t walk alone.\u201D"
+  choices:
+  - choiceText: Help him move forward
+    risk: 0
+    empathy: 3
+    patience: 0
+    aggression: 0
+  - choiceText: Ignore him and continue
+    risk: 0
+    empathy: 0
+    patience: 1
+    aggression: 0
+  - choiceText: Threaten him for information
+    risk: 2
+    empathy: 0
+    patience: 0
+    aggression: 0
