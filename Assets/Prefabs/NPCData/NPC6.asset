@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871ae3faf80ad044ab4e769ae8d21ef7, type: 3}
+  m_Name: NPC6
+  m_EditorClassIdentifier: 
+  npcText: 'I can guide you safely,
+
+    but only if you trust me completely.
+
+    Do
+    you trust me?'
+  choices:
+  - choiceText: "\u201CYes, guide me.\u201D"
+    empathy: 2
+    logic: 0
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: "\u201CI trust myself more.\u201D"
+    empathy: 0
+    logic: 2
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: "\u201CI don\u2019t trust anyone.\u201D"
+    empathy: 0
+    logic: 0
+    risk: 2
+    patience: 0
+    npcResponse: 
