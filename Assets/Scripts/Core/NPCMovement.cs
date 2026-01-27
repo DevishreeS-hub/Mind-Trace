@@ -3,44 +3,24 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour
 {
     public float speed = 2f;
-    public float patrolDistance = 3f;
+    public float leftPoint = -3f;
+    public float rightPoint = 3f;
 
-    private Vector3 startPosition;
-    private int direction = 1;
-    private bool canMove = true;
-
-    void Start()
-    {
-        startPosition = transform.position;
-    }
+    private bool movingRight = true;
 
     void Update()
     {
-        if (!canMove) return;
-
-        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
-
-        if (Vector2.Distance(startPosition, transform.position) >= patrolDistance)
+        if (movingRight)
         {
-            direction *= -1; // change direction
-            Flip();
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            if (transform.position.x >= rightPoint)
+                movingRight = false;
         }
-    }
-
-    void Flip()
-    {
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
-
-    public void StopMovement()
-    {
-        canMove = false;
-    }
-
-    public void ResumeMovement()
-    {
-        canMove = true;
+        else
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            if (transform.position.x <= leftPoint)
+                movingRight = true;
+        }
     }
 }

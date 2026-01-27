@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871ae3faf80ad044ab4e769ae8d21ef7, type: 3}
+  m_Name: NPC_FirstMeet
+  m_EditorClassIdentifier: 
+  npcText: 'You look lost in this simulation.
+
+    Do you trust me or walk alone?
+
+'
+  choices:
+  - choiceText: Help me
+    empathy: 3
+    logic: 0
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: "I don\u2019t trust you"
+    empathy: 0
+    logic: 3
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: Walk away silently
+    empathy: 0
+    logic: 0
+    risk: 0
+    patience: 2
+    npcResponse: 

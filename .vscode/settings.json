@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "MindTrace.sln"
+    "dotnet.defaultSolution": "Mind-Trace.sln"
 }

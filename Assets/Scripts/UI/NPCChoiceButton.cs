@@ -4,7 +4,6 @@ using TMPro;
 public class NPCChoiceButton : MonoBehaviour
 {
     public TextMeshProUGUI buttonText;
-
     private NPCChoice choice;
 
     public void Setup(NPCChoice data)
@@ -23,8 +22,7 @@ public class NPCChoiceButton : MonoBehaviour
             choice.patience
         );
 
-        Debug.Log("NPC Response: " + choice.npcResponse);
-
-        NPCDialogueUI.Instance.Hide();
+        // Show NPC response
+        NPCDialogueUI.Instance.ShowResponse(choice.npcResponse);
     }
 }
