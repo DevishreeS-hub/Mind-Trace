@@ -6664,7 +6664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 19fbf7581997fdb4a86cf44153ae8ced, type: 2}
+  defaultDialogue: {fileID: 11400000, guid: e9d409c28a3afeb4098dc8017071f751, type: 2}
 --- !u!61 &472039493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7083,7 +7083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 000d52fb77bdb054cac9d4dad38c4a78, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &486862968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100116,7 +100116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: fc4d3042192ff864bbcaa69a26be8a58, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &564220274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100738,7 +100738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: ca9249da57c156f42a809b666874a36b, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &591955111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107011,7 +107011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 9c6d78216b8755641893d94a7e56c7f3, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &1137192403
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254267,7 +254267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 72b82978416ce22438c794a68670db87, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &1647670988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258834,6 +258834,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1815426855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.14400001}
+--- !u!1 &1843367858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843367860}
+  - component: {fileID: 1843367859}
+  m_Layer: 0
+  m_Name: 'DialogueFlowManager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1843367859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843367858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9e37b577a942742b654e59299e9682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextDialogue: {fileID: 0}
+--- !u!4 &1843367860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843367858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847971181
 GameObject:
   m_ObjectHideFlags: 0
@@ -261273,7 +261318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15e2cf8dba686e45b45a6a946a33d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 9930dce12459a17479ec5addf4dd174b, type: 2}
+  defaultDialogue: {fileID: 0}
 --- !u!61 &2036707444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -262583,3 +262628,4 @@ SceneRoots:
   - {fileID: 486862970}
   - {fileID: 1137192405}
   - {fileID: 756948292}
+  - {fileID: 1843367860}

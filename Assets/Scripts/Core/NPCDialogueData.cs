@@ -21,4 +21,6 @@ public class NPCChoice
 
     [TextArea(2, 4)]
     public string npcResponse;
+
+    public NPCDialogueData nextDialogue;   // 🔥 THIS IS IMPORTANT
 }

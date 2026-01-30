@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
-    public NPCDialogueData dialogue;   // this is what was missing
-
+    public NPCDialogueData defaultDialogue;
     private bool hasTalked = false;
     private NPCMovement movement;
 
@@ -23,14 +22,12 @@ public class NPCTrigger : MonoBehaviour
             if (movement != null)
                 movement.enabled = false;
 
-            if (NPCDialogueUI.Instance != null && dialogue != null)
-            {
-                NPCDialogueUI.Instance.ShowDialogue(dialogue);
-            }
-            else
-            {
-                Debug.LogError("NPCDialogueUI or Dialogue is missing!");
-            }
+            NPCDialogueData dialogueToShow = defaultDialogue;
+
+            if (DialogueFlowManager.Instance.nextDialogue != null)
+                dialogueToShow = DialogueFlowManager.Instance.nextDialogue;
+
+            NPCDialogueUI.Instance.ShowDialogue(dialogueToShow);
         }
     }
 }

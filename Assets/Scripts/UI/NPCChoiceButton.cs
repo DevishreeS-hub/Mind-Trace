@@ -14,7 +14,6 @@ public class NPCChoiceButton : MonoBehaviour
 
     public void OnClick()
     {
-        // Update player psychology
         DecisionTracker.Instance.RegisterDecision(
             choice.risk,
             choice.empathy,
@@ -22,7 +21,12 @@ public class NPCChoiceButton : MonoBehaviour
             choice.patience
         );
 
-        // Show NPC response
+        // Store next dialogue
+        if (choice.nextDialogue != null)
+        {
+            DialogueFlowManager.Instance.nextDialogue = choice.nextDialogue;
+        }
+
         NPCDialogueUI.Instance.ShowResponse(choice.npcResponse);
     }
 }
