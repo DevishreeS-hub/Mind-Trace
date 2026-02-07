@@ -16,19 +16,36 @@ public class NPCDialogueUI : MonoBehaviour
     }
 
     public void ShowDialogue(NPCDialogueData data)
+{
+    if (data == null)
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-
-        npcText.text = data.npcText;
-
-        foreach (var btn in buttons)
-            btn.gameObject.SetActive(true);
-
-        for (int i = 0; i < buttons.Length; i++)
-            buttons[i].Setup(data.choices[i]);
+        Debug.LogError("Dialogue data is NULL!");
+        return;
     }
+
+    canvasGroup.alpha = 1;
+    canvasGroup.interactable = true;
+    canvasGroup.blocksRaycasts = true;
+
+    npcText.text = data.npcText;
+
+    // Hide all buttons first
+    for (int i = 0; i < buttons.Length; i++)
+    {
+        buttons[i].gameObject.SetActive(false);
+    }
+
+    // Show only required buttons
+    for (int i = 0; i < data.choices.Length; i++)
+    {
+        if (i < buttons.Length)
+        {
+            buttons[i].gameObject.SetActive(true);
+            buttons[i].Setup(data.choices[i]);
+        }
+    }
+}
+
 
     public void Hide()
     {

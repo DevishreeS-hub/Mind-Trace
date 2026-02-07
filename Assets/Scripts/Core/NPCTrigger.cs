@@ -3,6 +3,7 @@ using UnityEngine;
 public class NPCTrigger : MonoBehaviour
 {
     public NPCDialogueData defaultDialogue;
+public NPCDialogueUI ui;
     private bool hasTalked = false;
     private NPCMovement movement;
 
