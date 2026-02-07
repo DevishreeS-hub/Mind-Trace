@@ -18,6 +18,8 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
+        public GameObject GameOverScreen;
+        public int TotalLife = 3;
         /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
@@ -44,6 +46,7 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
+            TotalLife = 3;
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();

@@ -10,7 +10,7 @@ public class NPCDialogueData : ScriptableObject
 }
 
 [System.Serializable]
-public class NPCChoice
+public class  NPCChoice
 {
     public string choiceText;
 

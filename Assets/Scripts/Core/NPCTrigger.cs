@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
+    public string npcName;
     public NPCDialogueData defaultDialogue;
 public NPCDialogueUI ui;
     private bool hasTalked = false;
@@ -22,13 +23,10 @@ public NPCDialogueUI ui;
 
             if (movement != null)
                 movement.enabled = false;
-
-            NPCDialogueData dialogueToShow = defaultDialogue;
-
-            if (DialogueFlowManager.Instance.nextDialogue != null)
-                dialogueToShow = DialogueFlowManager.Instance.nextDialogue;
-
-            NPCDialogueUI.Instance.ShowDialogue(dialogueToShow);
+            
+            ui.ShowSituation(defaultDialogue, npcName);
+            gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Platformer.Gameplay
         public override void Execute()
         {
             var player = model.player;
-            if (player.health.IsAlive)
+            if (player.health.IsAlive && player.TotalLife > 0)
             {
                 player.health.Die();
                 model.virtualCamera.m_Follow = null;
@@ -29,7 +29,11 @@ namespace Platformer.Gameplay
                     player.audioSource.PlayOneShot(player.ouchAudio);
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
+                player.TotalLife -= 1;
                 Simulation.Schedule<PlayerSpawn>(2);
+            }else if (player.TotalLife <= 0)
+            {
+                player.GameOverScreen.SetActive(true);
             }
         }
     }

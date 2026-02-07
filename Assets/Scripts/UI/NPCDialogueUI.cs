@@ -1,66 +1,65 @@
+using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class NPCDialogueUI : MonoBehaviour
 {
-    public static NPCDialogueUI Instance;
+    [Header("UI References")]
+    public GameObject panel;
+    public TextMeshProUGUI situationText;
+    public Button[] choiceButtons;
 
-    public CanvasGroup canvasGroup;
-    public TextMeshProUGUI npcText;
-    public NPCChoiceButton[] buttons;
+    public NPCTrigger npc_1;
+    public NPCTrigger npc_2;
+    public NPCTrigger npc_3;
+    
+    private NPCDialogueData currentSituation;
 
-    private void Awake()
+    private void Start()
     {
-        Instance = this;
-        Hide();
+        gameObject.SetActive(false);
     }
-
-    public void ShowDialogue(NPCDialogueData data)
-{
-    if (data == null)
+    public void ShowSituation(NPCDialogueData situation, string npcName)
     {
-        Debug.LogError("Dialogue data is NULL!");
-        return;
-    }
+        currentSituation = situation;
 
-    canvasGroup.alpha = 1;
-    canvasGroup.interactable = true;
-    canvasGroup.blocksRaycasts = true;
+        gameObject.SetActive(true);
+        situationText.text = situation.npcText;
 
-    npcText.text = data.npcText;
-
-    // Hide all buttons first
-    for (int i = 0; i < buttons.Length; i++)
-    {
-        buttons[i].gameObject.SetActive(false);
-    }
-
-    // Show only required buttons
-    for (int i = 0; i < data.choices.Length; i++)
-    {
-        if (i < buttons.Length)
+        for (int i = 0; i < choiceButtons.Length; i++)
         {
-            buttons[i].gameObject.SetActive(true);
-            buttons[i].Setup(data.choices[i]);
+            if (i < situation.choices.Length)
+            {
+                choiceButtons[i].gameObject.SetActive(true);
+                choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text =
+                    situation.choices[i].choiceText;
+
+                int index = i;
+                choiceButtons[i].onClick.RemoveAllListeners();
+                choiceButtons[i].onClick.AddListener(() =>
+                    SelectChoice(situation.choices[index], npcName)
+                );
+            }
+            else
+            {
+                choiceButtons[i].gameObject.SetActive(false);
+            }
         }
     }
-}
 
-
-    public void Hide()
+    void SelectChoice(NPCChoice choice, string npcName)
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
+        if (npcName == npc_1.npcName)
+        {
+            npc_2.defaultDialogue = choice.nextDialogue;
+        }else if (npcName == npc_2.npcName)
+        {
+            npc_3.defaultDialogue = choice.nextDialogue;
+        }
+        
+        Time.timeScale = 1;
+        panel.SetActive(false);
     }
-
-    public void ShowResponse(string response)
-    {
-        npcText.text = response;
-
-        foreach (var btn in buttons)
-            btn.gameObject.SetActive(false);
-
-        Invoke(nameof(Hide), 2f);
-    }
+    
 }
