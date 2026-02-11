@@ -18,6 +18,7 @@ public class  NPCChoice
     public int logic;
     public int risk;
     public int patience;
+    public int aggression;
 
     [TextArea(2, 4)]
     public string npcResponse;
