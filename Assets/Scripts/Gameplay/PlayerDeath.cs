@@ -33,7 +33,7 @@ namespace Platformer.Gameplay
                 Simulation.Schedule<PlayerSpawn>(2);
             }else if (player.TotalLife <= 0)
             {
-                player.GameOverScreen.SetActive(true);
+                player.GameOverScreen.ShowGameOver();
             }
         }
     }

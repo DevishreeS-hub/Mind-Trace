@@ -18,7 +18,7 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
-        public GameObject GameOverScreen;
+        public GameOverController GameOverScreen;
         public int TotalLife = 3;
         /// <summary>
         /// Max horizontal speed of the player.
