@@ -24,4 +24,12 @@ public class AnswerTracker : MonoBehaviour
         patience += choice.patience;
         aggression += choice.aggression;
     }
+
+    public void RecordChoice(NPCChoice choice)
+    {
+        risk += choice.risk;
+        empathy += choice.empathy;
+        patience += choice.patience;
+        aggression += choice.aggression;
+    }
 }

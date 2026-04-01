@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871ae3faf80ad044ab4e769ae8d21ef7, type: 3}
+  m_Name: SO_Question1
+  m_EditorClassIdentifier: 
+  npcText: 'You see a stranger trapped in a broken zone.
+
+    What will you do?
+
+'
+  choices:
+  - choiceText: Help Him
+    empathy: 3
+    logic: 0
+    risk: 1
+    patience: 1
+    npcResponse: He looks relieved
+    nextDialogue: {fileID: 11400000, guid: 3889995d662dd4847b4b2cce0a65e3f0, type: 2}
+  - choiceText: Ignore and move on
+    empathy: 0
+    logic: 2
+    risk: 0
+    patience: 2
+    npcResponse: He looks disappointed.
+    nextDialogue: {fileID: 11400000, guid: de72c963291302b4ca76850596734581, type: 2}
+  - choiceText: Ask what happended
+    empathy: 1
+    logic: 1
+    risk: 0
+    patience: 2
+    npcResponse: He starts explaining.
+    nextDialogue: {fileID: 11400000, guid: 3889995d662dd4847b4b2cce0a65e3f0, type: 2}

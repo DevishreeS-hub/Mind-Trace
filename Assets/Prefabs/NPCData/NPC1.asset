@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871ae3faf80ad044ab4e769ae8d21ef7, type: 3}
+  m_Name: NPC1
+  m_EditorClassIdentifier: 
+  npcText: 'You seem new to this simulation.
+
+    This world changes based on how
+    you decide.
+
+    What will guide you here?'
+  choices:
+  - choiceText: "ices:  \u201CI will help anyone I meet.\u201D"
+    empathy: 3
+    logic: 0
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: "\u201CI will think carefully before acting.\u201D"
+    empathy: 0
+    logic: 3
+    risk: 0
+    patience: 0
+    npcResponse: 
+  - choiceText: "\u201CI will take risks to move faster.\u201D"
+    empathy: 0
+    logic: 0
+    risk: 3
+    patience: 0
+    npcResponse: 
